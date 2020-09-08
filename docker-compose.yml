@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    # 使用するイメージ(pullしてなくても大丈夫)
+    image: mysql:5.7
+    # コンテナに名前つける
+    container_name: mysql_sample
+    # -p　~ って書いていた部分。ポートフォワーディング。
+    ports:
+      - "3000:3000"
+    # 永続化のためのマウント
+    volumes:
+      # データベースの初期化
+      - ./db/mysql_init:/docker-entrypoint-initdb.d
+      # 永続化のためのファイル共有
+      - ./db/mysql_data:/var/lib/mysql
+    # -e ~　って書いていた部分(環境変数)
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: test
+      MYSQL_PASSWORD: pass
