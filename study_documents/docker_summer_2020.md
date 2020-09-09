@@ -122,7 +122,7 @@ Dockerに関するファイルを共有するだけで同じ環境で作業す�
 
 <br>
 
-- [docker](https://github.com/c-a-c/wordpress-theme.git) 
+- [docker](https://www.docker.com/) 
 
 <br>
 
@@ -164,7 +164,8 @@ Dockerに関するファイルを共有するだけで同じ環境で作業す�
 
 ### まあとりあえず触ってみようや(step1)
 <br>
-ってことでハンズオン挟みます[c-a-c/summer_study_2020](https://github.com/c-a-c/Summer_study_2020)  
+ってことでハンズオン挟みます
+[c-a-c/summer_study_2020](https://github.com/c-a-c/Summer_study_2020)
 
 (作業環境はどのディレクトリでも構いません。)
 
@@ -273,15 +274,26 @@ docker runではオプションを多くつけすぎてわからなくなるこ�
 
 ---
 
-### step3終了
+## step1~3のまとめ
+- step1  
+DBのコンテナ起動して、レコードの追加・削除。
+- step2  
+コンテナを消してDBが消えてるか確認。
+- step3
+レコード操作後コンテナ削除。再度コンテナを立ててデータが残っているかの確認(永続化の確認)。
 
 ---
 
-### まとめ
+## まとめ
 
 - Docker使うと簡単に環境を構築できる。
 
 - コンテナはそれぞれ独立しているが、連携させることで１つのアプリとして使えるようになる。
+
+- マウントすることでホストとコンテナのファイル共有ができちゃう。  
+  - DBの話だと永続化や初期化が可能。
+
+- `docker-compose up`は複数のコンテナを立ち上げるときに主に使われる。
 
 ---
 
@@ -291,6 +303,9 @@ docker runではオプションを多くつけすぎてわからなくなるこ�
   - [bbb](https://bcblog.sios.jp/what-is-virtualenvironment-vmware/)
 - Dockerの永続化
   - [ccc](https://qiita.com/nobi_tum/items/0dd1ce7407e720338ea8)
+
+- markdownからパワポPDFを作る
+  - [marp](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
 
 ---
 <br><br><br><br><br>
